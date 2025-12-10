@@ -1,0 +1,30 @@
+# 这是一个 YAML 文件，用于存储组件映射关系。
+# 数组由以连字符 (-) 开头的块表示。
+# 多行字符串使用管道符 (|) 来定义，这使得嵌入代码片段非常干净。
+
+- name: BizButton
+  figmaDataNodeId: '10004:2660'
+  path: '@/components/biz-button/index.vue'
+  reference: |
+    <script setup lang="ts">
+    import {BizButton} from '@/components';
+    </script>
+    <template>
+     <BizButton
+        :disabled="!canOrder"
+        class=""
+        :custom-style="{ width: '332rpx',flex: 1 }"
+        size="large"
+        type="primary"
+        @click="onOrder"
+      >
+        {{ autoFillAmount ? '确认' : '开始' }}
+      </BizButton>
+    </template>
+- name: ScrollView
+  path: '@/components/scroll-view/index.vue'
+  reference: |
+    <script setup lang="ts">
+    <template>
+         <scroll-view>><slot /></scroll-view>
+    </template>
